@@ -1,4 +1,5 @@
 require_relative 'config/environment'
+require_relative 'models/puppy'
 
 class App < Sinatra::Base
 
@@ -11,6 +12,10 @@ class App < Sinatra::Base
  end 
  
  post '/puppy' do 
+   @name = params[:name]
+   @breed = params[:breed]
+   @age = params[:age]
+   
    erb :display_puppy
  end 
 end
